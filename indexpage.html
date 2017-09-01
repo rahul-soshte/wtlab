@@ -3,42 +3,72 @@
 
 <head>
 <title>Rahul</title>
+
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="mystyle.css">
-<style type="text/css">
+<style>
 div.third{
 position : absolute;
 top : 0px;
 right : 10px; 
 }
+
+
 div.fourth h2
 {
 color : white ; 
 }
+
+
 div.third h2
 {
 color : white ; 
 }
+
+
 div.one h2
 {
 color : white ; 
 }
+
 div.one h2
 {
 position : absolute;
 top : 0px; 
 right : 120px;
 }
+
+
 div.imag-grocery{
 position: relative;
+
 top: -65px;
 left : 0px;
+z-index: -1;
+border:2px solid #fff;
+
+box-shadow: 10px 10px 5px #ccc;
+			-moz-box-shadow: 10px 10px 5px #ccc;
+			-webkit-box-shadow: 10px 10px 5px #ccc;
+			-khtml-box-shadow: 10px 10px 5px #ccc;
 }
 
+ul.products li {
+    width: 200px;
+    display: inline-block;
+}
+ul p{
+background: #4CAF50;
+    padding: 20px;
+}
+ul h4{
+background: #4CAF50;
+    padding: 20px;
+}
 </style>
 </head>
 
-<body> 
+<body style="background-color:#8B4513"> 
+
 <div>
 <div class="fourth" style = "background-color:black;">
 <a href="aboutus.html"><h2 style="text-align:center">Rahul's Grocery Store</h2></a>
@@ -60,27 +90,32 @@ left : 0px;
 <img src="rahul.jpg" height="250" width="2000" alt="rahul">
 </div>
 
-<p>List of Products available with us</p>
-<ol type="1">
-<li>Vegetables</li>
-<li>Cereals</li>
-<li>Fermented Products</li>
-<li>Sandwich Breads,Pizza Breads</li>
-</ol>
 
-
-
-<iframe src="camad.jpg"></iframe>
-<br>
-<select>
+<!--<select>
   <option value="Vegetables">Vegetables</option>
   <option value="Dairy Products">Dairy Products</option>
 </select>
 
+<br>-->
+<!--<textarea rows="20" cols="20">comments</textarea>-->
+<ul class="products">
+    <li>
+        <a href="#">
+            <img src="milk.jpg">
+            <h4>Legendairy Product</h4>
+            <p>Rs 20.00</p>
+        </a>
+    </li>
+    <li>
+        <a href="#">
+            <img src="cottage.jpg">
+            <h4>Cottage Cheese</h4>
+            <p>Rs 25.00</p>
+        </a>
+    </li><!-- more list items -->
+</ul>
 
 
-<br>
-<textarea rows="20" cols="20">comments</textarea>
 
 </body>
 </html>
