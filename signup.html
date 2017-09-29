@@ -14,26 +14,130 @@ input[type=button], input[type=submit], input[type=reset] {
     cursor: pointer;
 }
 </style>
+<script>
+function validateForm() {
+    var x = document.forms["myForm"]["fname"].value;
+    var y= document.forms["myForm"]["lname"].value;
+	var z=document.forms["myForm"]["username"].value;
+	var m=document.forms["myForm"]["contactno"].value;
+	var hasNumber = /\d/;
+	var e=document.forms["myForm"]["emailaddress"].value;
+	var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+	var password=document.forms["myForm"]["password"].value;
+	var repass=document.forms["myForm"]["password2"].value;
+	var contact=document.forms["myForm"]["contactno"].value;
+	var isnum = /^\d+$/;
+	var address=document.forms["myForm"][""].value; 
+	if (x == "") {
+        alert("First Name must be filled out");
+        return false;
+    }
+	
+	if(y=="")
+	{
+	alert("Last Name must be filled out");
+	return false;
+	}
+	
+	if(z.length<4)
+	{
+	alert("Username is less than 4 characters");
+	return false;
+	}
+	
+	if(hasNumber.test(x) || hasNumber.test(y))
+	{
+	alert("Name cannot contain a number");
+	return false;
+	}
+	
+	if (reg.test(e) == false) 
+        {
+            alert('Invalid Email Address');
+            return false;
+        }
+	if(password != repass)	
+	{
+	alert("password not same");
+	return false;
+	}
+	if(isnum.test(contact) == false )
+	{
+	alert("Contact Number cannot contain letters");
+	return false;
+	}
+	
+}
+</script>
+
 </head>
 <body style="background-color:orange"> 
 
 <div>
-<form>
+<!--<form onsubmit="return matchpass()">
     First name:<br>
   <input type="text" name="firstname"><br>
     Last name:<br>
   <input type="text" name="lastname"><br>
     Username:<br>
   <input type="text" name="username"><br>
-    Password:<br>
-  <input type="text" name="password"><br>
-  Reenter Password:<br>
-   <input type="text" name="reenter password"><br>
+   
+    Email Address:<br>
+  <input type="text" name="emailaddress"><br>
+   DOB:<br>
+  <input type="text" name="dob"><br>
+   Contact No:<br>
+  <input type="text" name="contactno"><br>
+   Address:<br>
+  <input type="text" name="address"><br>
    Customer Type:
    <input type="radio" name="customer type" value="buyer" checked>buyer <input type="radio" name="customer type" value="seller">seller<br>
 <br>
-   <input type="button" name="Signup" value="Signup"><br>
+   
+    Password:<br>
+  <input type="text" name="password"><br>
+  Reenter Password:<br>
+   <input type="text" name="password2"><br>
+   
+   <input type="submit" name="Signup" value="Signup"><br>
+   
+</form>-->
+<form name="myForm"
+onsubmit="return validateForm()" method="post" >
+First Name: <input type="text" name="fname"><br>
+<br>
+Last Name: <input type="text" name="lname"><br>
+<br>
+Username:<input type="text" name="username"><br>
+
+<br>
+ Address:
+  <input type="text" name="address"><br>
+
+  <br>
+  Contact No:
+  <input type="text" name="contactno"><br>
+  <br>
+   Email Address:
+  <input type="text" name="emailaddress"><br>
+  <br>
+  
+  Customer Type:
+   <input type="radio" name="customer type" value="buyer" checked>buyer <input type="radio" name="customer type" value="seller">seller<br>
+<br>
+ 
+ <!--DOB:<input type="text" name="dob"><br>
+   <br>-->
+   
+   Password:
+  <input type="text" name="password"><br>
+  <br>
+  Reenter Password:
+   <input type="text" name="password2"><br>
+   <br>
+<input type="submit" value="Submit">
 </form>
+
 </div>
 
 </body>
